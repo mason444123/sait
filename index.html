@@ -123,6 +123,18 @@
     letter-spacing: 0.04em;
     color: var(--white);
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+  .nav-logo img {
+    display: block;
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+  }
+  @media (max-width: 768px) {
+    .nav-logo img { height: 36px; }
   }
   .nav-logo span { color: var(--red); }
   .nav-links {
@@ -1582,7 +1594,12 @@
 
 <!-- ═══ NAV ═══════════════════════════════════════════════════════ -->
 <nav>
-  <a href="#" class="nav-logo">БИГ РАШН ФЕСТ</a>
+  <a href="#" class="nav-logo" aria-label="BIG RUSSIAN FEST">
+    <img src="assets/brf-logo-480.png"
+         srcset="assets/brf-logo-480.png 480w, assets/brf-logo.png 2400w"
+         sizes="(max-width: 768px) 36px, 44px"
+         alt="BIG RUSSIAN FEST">
+  </a>
   <ul class="nav-links">
     <li><a href="#lineup">Лайнап</a></li>
     <li><a href="#venue">Место</a></li>
