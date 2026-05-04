@@ -760,10 +760,12 @@
   }
   .headliner-img {
     width: 100%;
-    aspect-ratio: 4/3;
+    height: 100%;
+    aspect-ratio: auto;
     object-fit: cover;
     object-position: top center;
     filter: saturate(1.1) contrast(1.05);
+    display: block;
   }
   .headliner-info {
     padding: 40px 40px;
@@ -808,6 +810,7 @@
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 16px;
     margin-top: 8px;
+    align-items: start;
   }
   .artist-card {
     background: rgba(0,0,0,0.4);
@@ -1790,10 +1793,13 @@
       </div>
 
       <div class="artists-grid">
-        <div class="artist-card reveal reveal-delay-2">
-          <div class="artist-num">03 /</div>
-          <div class="artist-card-name">???</div>
-          <div class="artist-card-sub">Headliner</div>
+        <div class="artist-card artist-card-featured reveal reveal-delay-2">
+          <img src="assets/poster.jpg" alt="03 / Headliner" class="artist-card-img" loading="lazy">
+          <div class="artist-card-body">
+            <div class="artist-num">03 /</div>
+            <div class="artist-card-name">???</div>
+            <div class="artist-card-sub">Headliner</div>
+          </div>
         </div>
         <div class="artist-card reveal reveal-delay-3">
           <div class="artist-num">04 /</div>
