@@ -1256,8 +1256,15 @@
     .hero-img-wrap {
       width: 100vw;
       margin: 14px calc(50% - 50vw) 0;
+      aspect-ratio: 4 / 5;
+      height: auto;
     }
-    .hero-img-wrap img { width: 100vw; }
+    .hero-img-wrap img {
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+    }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .cta-inner { padding: 60px 24px; }
   }
