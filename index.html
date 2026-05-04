@@ -1593,7 +1593,11 @@
   <h1 class="hero-artist-name" data-text="BIG RUSSIAN FEST">BIG RUSSIAN FEST</h1>
 
   <div class="hero-img-wrap">
-    <img src="assets/brf-poster.jpg" alt="Big Russian Boss" loading="eager">
+    <picture>
+      <source media="(min-width: 1921px)" srcset="assets/brf-poster-3840.jpg">
+      <source media="(min-width: 769px)" srcset="assets/brf-poster-1920.jpg">
+      <img src="assets/brf-poster.jpg" alt="Big Russian Boss" loading="eager" fetchpriority="high">
+    </picture>
   </div>
 
   <!-- Tricolor stripe -->
