@@ -821,6 +821,31 @@
     position: relative;
     overflow: hidden;
   }
+  .artist-card-featured {
+    padding: 0;
+    background: var(--black);
+  }
+  .artist-card-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: saturate(1.08) contrast(1.05);
+  }
+  .artist-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .artist-card-desc {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.62);
+    margin-top: 6px;
+  }
   .artist-card::after {
     content: '';
     position: absolute;
@@ -1753,10 +1778,14 @@
       </div>
 
       <div class="artists-grid">
-        <div class="artist-card reveal">
-          <div class="artist-num">02 /</div>
-          <div class="artist-card-name">???</div>
-          <div class="artist-card-sub">Headliner</div>
+        <div class="artist-card artist-card-featured reveal">
+          <img src="assets/babtoma-dj.jpg" alt="BABTOMA DJ" class="artist-card-img" loading="lazy">
+          <div class="artist-card-body">
+            <div class="artist-num">02 /</div>
+            <div class="artist-card-name">BABTOMA DJ</div>
+            <div class="artist-card-sub">DJ / MC SHOW</div>
+            <div class="artist-card-desc">Она не просто играет треки, а устраивает динамичное шоу: сводит сет, общается с залом и раскачивает его как настоящий МС. В ее арсенале — мэшапы, набравшие миллионы просмотров и запустившие тренды в TikTok. BabToma точно знает, как сделать вечер живым и незабываемым.</div>
+          </div>
         </div>
         <div class="artist-card reveal reveal-delay-1">
           <div class="artist-num">03 /</div>
