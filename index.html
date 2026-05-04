@@ -1261,18 +1261,18 @@
     .hero-img-wrap {
       width: 100vw;
       margin: 14px calc(50% - 50vw) 0;
-      /* Пропорции контейнера = пропорциям экрана телефона (по диагонали) */
-      aspect-ratio: 100vw / 100svh;
+      /* Вертикальный постер — оставляем естественные пропорции, без crop-а */
+      aspect-ratio: auto;
       height: auto;
-      max-height: 100svh;
-      overflow: hidden;
+      max-height: none;
+      overflow: visible;
     }
     .hero-img-wrap img {
       width: 100vw;
-      height: 100%;
-      /* Обрезка по бокам под диагональ экрана, без растяжения */
-      object-fit: cover;
-      object-position: center 38%;
+      height: auto;
+      /* Вертикальный исходник уже под мобилу — не обрезаем */
+      object-fit: fill;
+      object-position: center;
     }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .cta-inner { padding: 60px 24px; }
@@ -1594,6 +1594,8 @@
 
   <div class="hero-img-wrap">
     <picture>
+      <source media="(max-width: 480px)" srcset="assets/brf-poster-mobile-828.jpg">
+      <source media="(max-width: 768px)" srcset="assets/brf-poster-mobile.jpg">
       <source media="(min-width: 1921px)" srcset="assets/brf-poster-3840.jpg">
       <source media="(min-width: 769px)" srcset="assets/brf-poster-1920.jpg">
       <img src="assets/brf-poster.jpg" alt="Big Russian Boss" loading="eager" fetchpriority="high">
