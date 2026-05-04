@@ -265,17 +265,18 @@
   .hero-img-wrap {
     position: relative;
     z-index: 8;
-    width: 100%;
-    max-width: 600px;
-    margin: -20px auto 0;
+    width: 100vw;
+    max-width: none;
+    margin: clamp(10px, 2vh, 28px) calc(50% - 50vw) 0;
     display: flex;
     justify-content: center;
+    overflow: hidden;
   }
   .hero-img-wrap img {
-    width: 100%;
+    width: 100vw;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 0;
     box-shadow: 0 8px 80px rgba(0,0,0,0.6), 0 0 60px rgba(123, 42, 255, 0.4);
     animation: float 6s ease-in-out infinite;
   }
@@ -1252,7 +1253,11 @@
     .exp-grid { grid-template-columns: 1fr; }
     .countdown { gap: 4px; }
     .cd-block { min-width: 72px; }
-    .hero-img-wrap { max-width: 100%; }
+    .hero-img-wrap {
+      width: 100vw;
+      margin: 14px calc(50% - 50vw) 0;
+    }
+    .hero-img-wrap img { width: 100vw; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .cta-inner { padding: 60px 24px; }
   }
@@ -1590,7 +1595,7 @@
 
     <div class="hero-address-row">
       <span class="addr-chip">12 июня — Адонис</span>
-      <span class="addr-chip">13 июня — Пушкина 29а</span>
+      <span class="addr-chip">13 июня — секретная коллаборация</span>
       <span class="addr-chip">Казань</span>
       <span class="addr-chip">18+</span>
     </div>
@@ -1633,7 +1638,7 @@
         <div class="section-label">О ФЕСТИВАЛЕ</div>
         <div class="big-quote">Первый ночной рэп open-air<br><span>в Татарстане.</span></div>
         <p>Две ночи, когда Казань звучит как никогда. Без компромиссов, без остановок — только главные артисты, свет и бас в открытом небе.</p>
-        <p>12–13 июня. <strong>12 июня</strong> — площадка «Адонис», Профсоюзная 3. <strong>13 июня</strong> — Пушкина 29а. Ночь, дым, лучи, 2500+ человек — и ты в центре главного культурного события лета.</p>
+        <p>12–13 июня. <strong>12 июня</strong> — площадка «Адонис», Профсоюзная 3. <strong>13 июня</strong> — секретная коллаборация. Ночь, дым, лучи, 2500+ человек — и ты в центре главного культурного события лета.</p>
         <p>Не концерт. Не вечеринка. <strong>Инфоповод.</strong></p>
         <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
           <span class="role-tag">НОЧНОЙ OPEN-AIR</span>
@@ -1648,7 +1653,7 @@
         </div>
         <div class="stat-block">
           <div class="stat-pre">Более</div>
-          <div class="stat-num">7<span>+</span></div>
+          <div class="stat-num">7</div>
           <div class="stat-label">Артистов</div>
           <div class="stat-sub">за 2 дня</div>
         </div>
@@ -1828,7 +1833,7 @@
           </div>
           <div class="venue-detail-row">
             <span class="vd-key">13 Июня</span>
-            <span class="vd-val">Пушкина 29а, Казань</span>
+            <span class="vd-val">Секретная коллаборация</span>
           </div>
           <div class="venue-detail-row">
             <span class="vd-key">Формат</span>
@@ -2193,7 +2198,7 @@
   </div>
   <div class="footer-inner">
     <div class="footer-brand">БИГ РАШН ФЕСТ</div>
-    <div class="footer-info">Big Russian Fest 2026 · Казань · Адонис (12 июня) · Пушкина 29а (13 июня)<br>Ночной Open-Air · 12–13 Июня · 21:00–05:00</div>
+    <div class="footer-info">Big Russian Fest 2026 · Казань · Адонис (12 июня)<br>Ночной Open-Air · 12–13 Июня · 21:00–05:00</div>
     <div class="footer-age">18+</div>
   </div>
 </footer>
