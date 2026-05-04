@@ -274,11 +274,16 @@
   }
   .hero-img-wrap img {
     width: 100vw;
+    max-width: 100vw;
     height: auto;
     display: block;
     border-radius: 0;
     box-shadow: 0 8px 80px rgba(0,0,0,0.6), 0 0 60px rgba(123, 42, 255, 0.4);
     animation: float 6s ease-in-out infinite;
+    image-rendering: auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   /* Tricolor stripe */
@@ -1256,12 +1261,16 @@
     .hero-img-wrap {
       width: 100vw;
       margin: 14px calc(50% - 50vw) 0;
-      aspect-ratio: 4 / 5;
+      /* Пропорции контейнера = пропорциям экрана телефона (по диагонали) */
+      aspect-ratio: 100vw / 100svh;
       height: auto;
+      max-height: 100svh;
+      overflow: hidden;
     }
     .hero-img-wrap img {
       width: 100vw;
       height: 100%;
+      /* Обрезка по бокам под диагональ экрана, без растяжения */
       object-fit: cover;
       object-position: center 38%;
     }
