@@ -1678,35 +1678,53 @@
   .legal-footer a { color: rgba(255,255,255,.82); text-decoration: underline; text-underline-offset: 3px; }
   .cookie-banner {
     position: fixed;
-    left: 16px; right: 16px; bottom: 16px;
+    left: 50%; bottom: 18px;
+    transform: translateX(-50%);
     z-index: 10000;
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 18px;
-    background: #111;
+    width: min(92vw, 680px);
+    padding: 12px 12px 12px 16px;
+    background: rgba(12,12,18,.78);
     color: #fff;
-    border: 1px solid rgba(255,255,255,.14);
-    border-radius: 16px;
-    box-shadow: 0 18px 60px rgba(0,0,0,.55);
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 999px;
+    box-shadow: 0 18px 60px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.04);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     font-family: var(--font-body);
   }
   .cookie-banner[hidden] { display:none; }
-  .cookie-banner__content { display:flex; gap:18px; align-items:center; justify-content:space-between; }
-  .cookie-banner__text { font-size:14px; line-height:1.45; color:rgba(255,255,255,.78); }
-  .cookie-banner__text a { color:#fff; text-decoration:underline; }
-  .cookie-banner__actions { display:flex; gap:10px; flex-shrink:0; }
-  .cookie-banner button { border:0; border-radius:10px; padding:12px 18px; font-weight:900; cursor:pointer; font-family:var(--font-body); text-transform:uppercase; letter-spacing:.06em; }
-  .cookie-accept { background:#fff; color:#111; }
-  .cookie-decline { background:rgba(255,255,255,.12); color:#fff; }
+  .cookie-banner__content { display:flex; gap:12px; align-items:center; justify-content:space-between; }
+  .cookie-banner__text { font-size:13px; line-height:1.25; color:rgba(255,255,255,.82); letter-spacing:.03em; }
+  .cookie-banner__text a { color:#fff; text-decoration:underline; text-underline-offset:2px; }
+  .cookie-banner__actions { display:flex; gap:8px; flex-shrink:0; }
+  .cookie-banner button { border:0; border-radius:999px; padding:10px 16px; font-weight:900; cursor:pointer; font-family:var(--font-body); text-transform:uppercase; letter-spacing:.06em; }
+  .cookie-accept { background: var(--red); color:#fff; box-shadow: 0 0 22px rgba(224,28,44,.35); }
+  .cookie-decline { background:rgba(255,255,255,.10); color:#fff; }
   @media (max-width: 760px) {
     .legal-footer { grid-template-columns: 1fr; padding: 0 24px 28px; }
-    .cookie-banner__content { flex-direction:column; align-items:stretch; }
-    .cookie-banner__actions { width:100%; }
-    .cookie-banner button { flex:1; }
+    .cookie-banner { border-radius: 18px; }
+    .cookie-banner__content { align-items:center; }
+    .cookie-banner__text { font-size:12px; }
+    .cookie-banner button { padding:9px 12px; }
   }
 
 </style>
-  <!-- Яндекс.Метрика перенесена в отложенную загрузку после согласия cookies -->
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109054298','ym');
+    ym(109054298,'init',{
+      ssr:true, webvisor:true, clickmap:true,
+      ecommerce:"dataLayer", referrer:document.referrer,
+      url:location.href, accurateTrackBounce:true, trackLinks:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109054298" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -1765,7 +1783,7 @@
     </div>
 
     <div class="hero-cta-wrap">
-      <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="btn-main" onclick="if(window.ym){ym(109054298,'reachGoal','TICKET_CLICK')}">КУПИТЬ БИЛЕТ</a>
+      <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="btn-main" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">КУПИТЬ БИЛЕТ</a>
       <a href="#lineup" class="btn-ghost">ЛАЙНАП →</a>
     </div>
   </div>
@@ -2103,7 +2121,7 @@
       <div class="faq-item reveal">
         <button class="faq-q" type="button">Зачем мне быть на БИГ РАШН ФЕСТ?<span class="faq-toggle">+</span></button>
         <div class="faq-a">
-          <p>Это <strong>ночной рэп-опен-эйр в центре Казани</strong>. Уже объявлен BIG RUSSIAN BOSS, а впереди — ещё несколько громких имён.</p>
+          <p>Это <strong>первый ночной рэп-опен-эйр в истории Татарстана</strong>. Уже объявлен BIG RUSSIAN BOSS, а впереди — ещё несколько громких имён.</p>
           <p>Старт — 12 июня, сразу после салюта в День России. Открытое небо, площадка в самом центре Казани, активности и незабываемые эмоции.</p>
         </div>
       </div>
@@ -2120,10 +2138,10 @@
         <button class="faq-q" type="button">Какие билеты доступны и чем отличаются?<span class="faq-toggle">+</span></button>
         <div class="faq-a">
           <p><strong>Стандарт</strong> — танцпол и движ.</p>
-          <p><strong>Комфорт</strong> — отдельный вход, отдельная зона с улучшенным обзором и доступом к бару.</p>
+          <p><strong>Комфорт</strong> — отдельный вход, лучший обзор и бар.</p>
           <p><strong>Групповой на троих</strong> — выгоднее на 15%.</p>
-          <p><strong>VIP</strong> — расширенный пакет привилегий: отдельная зона, мерч и дополнительные активности по правилам организатора. Точный состав пакета указывается в карточке билета.</p>
-          <p style="color: var(--red); font-weight: 700;">Цены могут изменяться для новых покупок. Цена уже оплаченного билета не меняется.</p>
+          <p><strong>VIP</strong> — проход за сцену, встреча с артистами и лимитированный мерч.</p>
+          <p style="color: var(--red); font-weight: 700;">Цены растут каждую неделю.</p>
         </div>
       </div>
 
@@ -2161,7 +2179,7 @@
       <div class="faq-item reveal">
         <button class="faq-q" type="button">Какое барное меню будет?<span class="faq-toggle">+</span></button>
         <div class="faq-a">
-          <p>На площадке планируется работа баров и точек с напитками. Полная информация по меню будет опубликована ближе к дате с учётом правил площадки и законодательства РФ.</p>
+          <p>Несколько баров с коктейлями, крепким, пивом и безалкогольными напитками. Полное меню с ценами опубликуем ближе к дате в соцсетях.</p>
           <p>Оплата — карта и наличные.</p>
         </div>
       </div>
@@ -2176,15 +2194,15 @@
       <div class="faq-item reveal">
         <button class="faq-q" type="button">Нужно ли брать паспорт?<span class="faq-toggle">+</span></button>
         <div class="faq-a">
-          <p>Фестиваль <strong>18+</strong>, на входе может проводиться визуальная проверка возраста по оригиналу документа, удостоверяющего личность. <strong>Документ необходимо взять с собой.</strong></p>
-          <p>Организатор не копирует, не фотографирует и не сохраняет паспортные данные посетителей, если иное не требуется законодательством РФ.</p>
+          <p>Фестиваль <strong>18+</strong>, на входе проверяем возраст. <strong>Оригинал паспорта необходимо брать с собой!</strong></p>
+          <p>Это основной документ, подтверждающий возраст гостя, и без него вход на мероприятие может быть затруднен.</p>
         </div>
       </div>
 
       <div class="faq-item reveal">
         <button class="faq-q" type="button">Какой дресс-код?<span class="faq-toggle">+</span></button>
         <div class="faq-a">
-          <p>Строгого дресс-кода нет. На мероприятии может проводиться фото- и видеосъёмка: посетители могут попасть в общие планы репортажных и промо-материалов. Если вы не хотите попадать в крупный план, обратитесь к представителю организатора на площадке.</p>
+          <p>Мы не намереваемся делать строгий дресс-код, однако на фестивале будет много камер, и мы будем рады, если ты поддержишь наш вайб и выгуляешь свой <strong>лучший аутфит</strong>!</p>
         </div>
       </div>
 
@@ -2208,10 +2226,10 @@
             </div>
             <div class="refund-row none">
               <span>Меньше 3 дней</span>
-              <span>По правилам и закону</span>
+              <span>Возврат не осуществляется</span>
             </div>
           </div>
-          <div class="fz-note">Возврат осуществляется через Voroh и/или организатора в соответствии с правилами возврата, офертой и применимым законодательством РФ. Подробно — в разделе «Условия возврата».</div>
+          <div class="fz-note">РЕГУЛИРУЕТСЯ ФЗ №193</div>
         </div>
       </div>
     </div>
@@ -2250,22 +2268,17 @@
 
     <!-- Виджет билетов: внешний Voroh загружается только по действию пользователя -->
     <div class="reveal ticket-widget-wrap">
-      <div class="legal-note">
-        Билеты оформляются через сервис Voroh. Нажимая «Открыть покупку билета» или «Купить билет», вы переходите к внешнему сервису и подтверждаете, что ознакомились с
-        <a href="offer.html">Публичной офертой</a>, <a href="rules.html">Правилами посещения</a>, <a href="refund.html">Условиями возврата</a>,
-        <a href="privacy-policy.html">Политикой обработки персональных данных</a> и <a href="cookie-policy.html">Политикой cookies</a>. Мероприятие 18+.
-      </div>
       <div class="external-widget-placeholder" data-voroh-placeholder>
         <div>
           <h3>Покупка билетов</h3>
-          <p>Виджет Voroh является внешним контентом и загружается только после вашего действия.</p>
+          <p>Нажми, чтобы открыть виджет покупки.</p>
           <button type="button" class="btn-main" data-load-voroh>Открыть покупку билета</button>
         </div>
       </div>
     </div>
 
     <div class="reveal" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
-      <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="btn-main" style="font-size: 28px; padding: 20px 64px;" onclick="if(window.ym){ym(109054298,'reachGoal','TICKET_CLICK')}">КУПИТЬ БИЛЕТ</a>
+      <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="btn-main" style="font-size: 28px; padding: 20px 64px;" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">КУПИТЬ БИЛЕТ</a>
     </div>
 
     <div class="reveal" style="margin-top: 24px;">
@@ -2284,7 +2297,7 @@
       <div class="external-widget-placeholder" data-voroh-placeholder>
         <div>
           <h3>Voroh</h3>
-          <p>Виджет покупки билетов загрузится только после вашего нажатия.</p>
+          <p>Нажми, чтобы открыть виджет покупки.</p>
           <button type="button" class="btn-main" data-load-voroh>Открыть покупку билета</button>
         </div>
       </div>
@@ -2350,8 +2363,7 @@
 <div id="cookieBanner" class="cookie-banner" hidden>
   <div class="cookie-banner__content">
     <div class="cookie-banner__text">
-      Мы используем обязательные cookies для работы сайта. Аналитика Яндекс.Метрики и внешние виджеты загружаются только после вашего согласия или действия.
-      Подробнее: <a href="cookie-policy.html">Политика cookies</a> и <a href="privacy-policy.html">Политика обработки персональных данных</a>.
+      Используем cookies. <a href="cookie-policy.html">Подробнее</a>.
     </div>
     <div class="cookie-banner__actions">
       <button type="button" class="cookie-accept" id="cookieAccept">Принять</button>
@@ -2361,26 +2373,15 @@
 </div>
 
 <script>
-  // ── Cookie consent + deferred analytics ─────────────────────────
-  const CUSTOM843_COOKIE_KEY = 'custom843_cookie_consent';
-  function hasCookieConsent(){ return localStorage.getItem(CUSTOM843_COOKIE_KEY) === 'accepted'; }
-  function loadYandexMetrika(){
-    if (!hasCookieConsent() || window.__ymLoaded) return;
-    window.__ymLoaded = true;
-    (function(m,e,t,r,i,k,a){
-      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
-    })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109054298','ym');
-    ym(109054298,'init',{ ssr:true, webvisor:false, clickmap:true, ecommerce:'dataLayer', accurateTrackBounce:true, trackLinks:true });
-  }
+  // ── Cookie banner ────────────────────────────────────────────────
+  const CUSTOM843_COOKIE_KEY = 'custom843_cookie_seen';
   function initCookieBanner(){
     const banner = document.getElementById('cookieBanner');
     const saved = localStorage.getItem(CUSTOM843_COOKIE_KEY);
     if (!saved && banner) banner.hidden = false;
-    if (saved === 'accepted') loadYandexMetrika();
-    document.getElementById('cookieAccept')?.addEventListener('click',()=>{ localStorage.setItem(CUSTOM843_COOKIE_KEY,'accepted'); if(banner) banner.hidden=true; loadYandexMetrika(); });
-    document.getElementById('cookieDecline')?.addEventListener('click',()=>{ localStorage.setItem(CUSTOM843_COOKIE_KEY,'declined'); if(banner) banner.hidden=true; });
+    const close = () => { localStorage.setItem(CUSTOM843_COOKIE_KEY,'1'); if(banner) banner.hidden=true; };
+    document.getElementById('cookieAccept')?.addEventListener('click', close);
+    document.getElementById('cookieDecline')?.addEventListener('click', close);
   }
   initCookieBanner();
 
