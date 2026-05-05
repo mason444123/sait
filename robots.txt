@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: custom843.ru
+Sitemap: https://custom843.ru/sitemap.xml
