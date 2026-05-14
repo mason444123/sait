@@ -1676,6 +1676,73 @@
   .legal-footer__text { font-size: 14px; line-height:1.55; }
   .legal-footer__links { display:flex; flex-direction:column; gap:7px; }
   .legal-footer a { color: rgba(255,255,255,.82); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Footer/legal alignment polish */
+  footer .socials {
+    margin-bottom: 14px;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(360px, 1.4fr) 90px;
+    align-items: center;
+    gap: 28px;
+  }
+  .footer-brand {
+    text-align: left;
+  }
+  .footer-info {
+    text-align: center;
+    line-height: 1.55;
+  }
+  .footer-age {
+    text-align: right;
+  }
+  .legal-footer {
+    grid-template-columns: minmax(260px, 1fr) minmax(280px, 1fr) minmax(340px, 1.25fr);
+    gap: 34px;
+    align-items: start;
+    padding-top: 8px;
+  }
+  .legal-footer > div {
+    min-width: 0;
+  }
+  .legal-footer__title {
+    min-height: 22px;
+    margin-bottom: 14px;
+    font-family: var(--font-impact);
+    font-size: 22px;
+    line-height: .95;
+    letter-spacing: .06em;
+  }
+  .legal-footer__text {
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+  .legal-footer__links {
+    gap: 9px;
+    line-height: 1.35;
+  }
+  .legal-footer a {
+    color: rgba(255,255,255,.86);
+  }
+
+  @media (max-width: 900px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      align-items: start;
+      text-align: left;
+    }
+    .footer-info,
+    .footer-age {
+      text-align: left;
+    }
+    .legal-footer {
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+  }
+
   .cookie-banner {
     position: fixed;
     left: 50%; bottom: 18px;
@@ -1867,6 +1934,19 @@
           <div>
             <span class="role-tag">01 /</span>
             <span class="role-tag">HEADLINER</span>
+          </div>
+          <div class="artist-media">
+            <a href="https://vkvideo.ru/video-130705885_456239699" target="_blank" rel="noopener" class="video-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              VK Видео
+            </a>
+            <a href="https://music.yandex.ru/artist/6142275" target="_blank" rel="noopener" class="ym-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-13l6 5-6 5V7z"/></svg>
+              Яндекс Музыка
+            </a>
+          </div>
+          <div class="headliner-video-wrap">
+            <iframe src="https://vkvideo.ru/video_ext.php?oid=-130705885&id=456239699&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </div>
