@@ -887,40 +887,6 @@
   }
   .special-guest-card .artist-card-name { color: var(--red); }
 
-  .artist-card-sky {
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: minmax(240px, 0.95fr) minmax(280px, 1.05fr);
-    align-items: stretch;
-  }
-  .artist-card-sky .artist-card-img {
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;
-    object-position: center;
-  }
-  .artist-card-sky .artist-card-body {
-    justify-content: center;
-  }
-  .artist-card-sky .artist-media a {
-    flex: 0 1 auto;
-    min-width: 190px;
-  }
-  @media (max-width: 900px) {
-    .artist-card-sky {
-      grid-column: auto;
-      grid-template-columns: 1fr;
-    }
-    .artist-card-sky .artist-card-img {
-      aspect-ratio: 1 / 1;
-      height: auto;
-    }
-    .artist-card-sky .artist-media a {
-      flex: 1;
-      min-width: 160px;
-    }
-  }
-
   /* ─── VENUE ──────────────────────────────────────────── */
   #venue {
     background: var(--black);
@@ -2028,7 +1994,7 @@
       </div>
 
       <div class="artists-grid">
-        <div class="artist-card artist-card-featured artist-card-sky reveal reveal-delay-3">
+        <div class="artist-card artist-card-featured reveal reveal-delay-3">
           <img src="assets/sky-rae-poster.png" alt="SKY RAE на БИГ РАШН ФЕСТ" class="artist-card-img" loading="lazy">
           <div class="artist-card-body">
             <div class="artist-num">04 /</div>
