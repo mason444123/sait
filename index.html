@@ -490,9 +490,9 @@
     color: rgba(255,255,255,0.15) !important;
     letter-spacing: 0.3em;
     position: relative;
-    filter: blur(4px);
+    filter: blur(0) !important;
     user-select: none;
-    transition: filter 0.6s ease, color 0.6s ease;
+    transition: color 0.6s ease;
   }
   .secret-date-label {
     color: rgba(255,255,255,0.25) !important;
@@ -509,24 +509,12 @@
     background: rgba(255,255,255,0.12) !important;
     border-color: rgba(255,255,255,0.2) !important;
   }
-  /* Lock icon badge */
   .secret-item .prog-time {
     color: rgba(255,255,255,0.2) !important;
     letter-spacing: 0.3em;
   }
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.3);
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    padding: 3px 10px;
-    margin-top: 5px;
-    text-transform: uppercase;
+  .secret-item .secret-lock-badge {
+    display: none !important;
   }
   /* Revealed state */
   .secret-item.revealed .prog-secret {
