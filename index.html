@@ -280,8 +280,8 @@
   .hero-img-wrap {
     position: relative;
     z-index: 8;
-    width: 100%;
-    max-width: 100vw;
+    width: min(1120px, calc(100vw - 64px));
+    max-width: 1120px;
     margin: clamp(10px, 2vh, 28px) auto 0;
     display: flex;
     justify-content: center;
@@ -293,7 +293,7 @@
     justify-content: center;
   }
   .hero-img-wrap img {
-    width: auto;
+    width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
