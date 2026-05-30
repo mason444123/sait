@@ -594,6 +594,7 @@
     grid-template-columns: 1fr;
     gap: 10px;
   }
+  .side-ticket-buy,
   .side-ticket-support {
     display: flex;
     align-items: center;
@@ -609,8 +610,14 @@
     font-weight: 900;
     letter-spacing: .11em;
     text-transform: uppercase;
+  }
+  .side-ticket-buy {
     background: linear-gradient(180deg, #22c55e 0%, #16a34a 55%, #0f7a35 100%);
     box-shadow: 0 10px 28px rgba(22,163,74,.28), inset 0 1px 0 rgba(255,255,255,.22);
+  }
+  .side-ticket-support {
+    background: rgba(255,255,255,.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
   }
 
   /* ─── TICKER ─────────────────────────────────────────── */
@@ -2064,7 +2071,8 @@
       </div>
     </div>
     <div class="side-ticket-panel__actions">
-      <a href="https://t.me/custom_843" target="_blank" rel="noopener" class="side-ticket-support" onclick="ym(109054298,'reachGoal','SUPPORT_CLICK')">Купить билет</a>
+      <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="side-ticket-buy" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">Купить билет</a>
+      <a href="https://t.me/custom_843" target="_blank" rel="noopener" class="side-ticket-support" onclick="ym(109054298,'reachGoal','SUPPORT_CLICK')">Поддержка</a>
     </div>
   </div>
 </div>
