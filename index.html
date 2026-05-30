@@ -461,6 +461,7 @@
     color: var(--white);
     border: 2px solid rgba(255,255,255,.28);
     border-right: 0;
+    border-radius: 22px 0 0 22px;
     font-family: var(--font-impact);
     font-size: 24px;
     line-height: .9;
@@ -471,7 +472,7 @@
     cursor: pointer;
     pointer-events: auto;
     box-shadow: 0 12px 38px rgba(0,0,0,.62), 0 0 34px rgba(224,28,44,.58);
-    clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% calc(100% - 12px), 0% 12px);
+    overflow: hidden;
     transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
   }
   .side-ticket-banner::before,
@@ -511,12 +512,14 @@
     padding: 16px;
     background: rgba(10,10,14,.96);
     border: 1px solid rgba(255,255,255,.14);
+    border-radius: 22px;
     box-shadow: 0 22px 70px rgba(0,0,0,.74), 0 0 36px rgba(224,28,44,.35);
     transform: translate(28px, -50%) scale(.94);
     transform-origin: right center;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    overflow: hidden;
     transition: opacity .22s ease, transform .26s cubic-bezier(.2,.9,.25,1), visibility 0s linear .26s;
   }
   .side-ticket-widget.is-open .side-ticket-panel {
@@ -565,20 +568,26 @@
     min-height: 340px;
     max-height: 48vh;
     overflow: hidden;
-    background: #fff;
-    border-radius: 10px;
+    background: #b10f1a;
+    border-radius: 18px;
   }
   .side-ticket-panel__widget .external-widget-placeholder {
     min-height: 340px;
+    padding: 0;
     border: 0;
-    border-radius: 10px;
+    border-radius: 18px;
+    background: transparent;
+    overflow: hidden;
   }
   .side-ticket-panel__widget iframe {
-    width: 100%;
+    width: calc(100% + 18px);
     height: 420px;
     max-height: 48vh;
+    margin: 0 -18px 0 0;
     border: 0;
+    border-radius: 18px;
     display: block;
+    background: #b10f1a;
   }
   .side-ticket-panel__actions {
     display: grid;
@@ -592,6 +601,7 @@
     justify-content: center;
     min-height: 46px;
     padding: 10px 14px;
+    border-radius: 16px;
     border: 1px solid rgba(255,255,255,.16);
     color: #fff;
     text-decoration: none;
@@ -1498,8 +1508,8 @@
       padding: 13px 22px 14px;
       gap: 10px;
       border: 2px solid rgba(255,255,255,.3);
-      border-radius: 0;
-      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      border-radius: 22px;
+      clip-path: none;
       font-size: 25px;
       line-height: 1;
       box-shadow: 0 10px 30px rgba(0,0,0,.7), 0 0 32px rgba(224,28,44,.64);
@@ -1535,8 +1545,8 @@
       transform: translate(50%, 0) scale(1);
     }
     .side-ticket-panel__title { font-size: 23px; }
-    .side-ticket-panel__widget { min-height: 300px; max-height: 42vh; }
-    .side-ticket-panel__widget .external-widget-placeholder { min-height: 300px; padding: 18px; }
+    .side-ticket-panel__widget { min-height: 300px; max-height: 42vh; border-radius: 18px; }
+    .side-ticket-panel__widget .external-widget-placeholder { min-height: 300px; padding: 0; }
     .side-ticket-panel__widget iframe { height: 360px; max-height: 42vh; }
     .side-ticket-panel__actions { grid-template-columns: 1fr; }
     .hero-img-wrap {
