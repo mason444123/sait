@@ -437,6 +437,60 @@
   }
   .btn-ghost:hover { border-color: var(--white); transform: scale(1.02); }
 
+  /* ─── FIXED TICKET BANNER ────────────────────────────── */
+  .side-ticket-banner {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 9999;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 236px;
+    width: 74px;
+    padding: 18px 10px;
+    background: linear-gradient(180deg, #ff2233 0%, var(--red) 48%, #9b0714 100%);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-impact);
+    font-size: 24px;
+    line-height: .9;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    border: 2px solid rgba(255,255,255,.28);
+    border-right: 0;
+    box-shadow: 0 12px 38px rgba(0,0,0,.62), 0 0 34px rgba(224,28,44,.58);
+    clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% calc(100% - 12px), 0% 12px);
+    transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+  }
+  .side-ticket-banner::before,
+  .side-ticket-banner::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    background: rgba(255,255,255,.9);
+  }
+  .side-ticket-banner::before { top: 12px; }
+  .side-ticket-banner::after { bottom: 12px; }
+  .side-ticket-banner:hover {
+    transform: translateY(-50%) translateX(-4px) scale(1.03);
+    background: linear-gradient(180deg, #ff4050 0%, #e01c2c 50%, #b01020 100%);
+    box-shadow: 0 16px 46px rgba(0,0,0,.72), 0 0 46px rgba(255,34,51,.76);
+  }
+  .side-ticket-banner__hint {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .18em;
+    opacity: .82;
+    margin-block-start: 10px;
+  }
+
   /* ─── TICKER ─────────────────────────────────────────── */
   .ticker-wrap {
     width: 100%;
@@ -1317,6 +1371,39 @@
     .exp-grid { grid-template-columns: 1fr; }
     .countdown { gap: 4px; }
     .cd-block { min-width: 72px; }
+    .side-ticket-banner {
+      top: auto;
+      right: 50%;
+      bottom: 14px;
+      transform: translateX(50%);
+      writing-mode: horizontal-tb;
+      width: min(92vw, 380px);
+      min-height: 0;
+      padding: 13px 22px 14px;
+      gap: 10px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-radius: 0;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      font-size: 25px;
+      line-height: 1;
+      box-shadow: 0 10px 30px rgba(0,0,0,.7), 0 0 32px rgba(224,28,44,.64);
+    }
+    .side-ticket-banner:hover { transform: translateX(50%) translateY(-3px) scale(1.02); }
+    .side-ticket-banner::before,
+    .side-ticket-banner::after {
+      top: 50%;
+      bottom: auto;
+      width: 3px;
+      height: auto;
+      transform: translateY(-50%);
+    }
+    .side-ticket-banner::before { left: 12px; right: auto; }
+    .side-ticket-banner::after { right: 12px; left: auto; }
+    .side-ticket-banner__hint {
+      margin: 0;
+      font-size: 10px;
+      letter-spacing: .13em;
+    }
     .hero-img-wrap {
       width: 100vw;
       margin: 14px calc(50% - 50vw) 0;
@@ -1809,6 +1896,11 @@
   <!-- /Yandex.Metrika counter -->
 </head>
 <body>
+
+<a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="side-ticket-banner" aria-label="Купить билет на BIG RUSSIAN FEST" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">
+  <span>Купить билет</span>
+  <span class="side-ticket-banner__hint">12 июня</span>
+</a>
 
 <!-- ═══ NAV ═══════════════════════════════════════════════════════ -->
 <nav>
