@@ -437,13 +437,20 @@
   }
   .btn-ghost:hover { border-color: var(--white); transform: scale(1.02); }
 
-  /* ─── FIXED TICKET BANNER ────────────────────────────── */
-  .side-ticket-banner {
+  /* ─── FIXED TICKET DRAWER ────────────────────────────── */
+  .side-ticket-widget {
     position: fixed;
     right: 0;
     top: 50%;
     z-index: 9999;
     transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+  .side-ticket-banner {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -452,7 +459,8 @@
     padding: 18px 10px;
     background: linear-gradient(180deg, #ff2233 0%, var(--red) 48%, #9b0714 100%);
     color: var(--white);
-    text-decoration: none;
+    border: 2px solid rgba(255,255,255,.28);
+    border-right: 0;
     font-family: var(--font-impact);
     font-size: 24px;
     line-height: .9;
@@ -460,8 +468,8 @@
     text-transform: uppercase;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    border: 2px solid rgba(255,255,255,.28);
-    border-right: 0;
+    cursor: pointer;
+    pointer-events: auto;
     box-shadow: 0 12px 38px rgba(0,0,0,.62), 0 0 34px rgba(224,28,44,.58);
     clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% calc(100% - 12px), 0% 12px);
     transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
@@ -477,8 +485,9 @@
   }
   .side-ticket-banner::before { top: 12px; }
   .side-ticket-banner::after { bottom: 12px; }
-  .side-ticket-banner:hover {
-    transform: translateY(-50%) translateX(-4px) scale(1.03);
+  .side-ticket-banner:hover,
+  .side-ticket-widget.is-open .side-ticket-banner {
+    transform: translateX(-4px) scale(1.03);
     background: linear-gradient(180deg, #ff4050 0%, #e01c2c 50%, #b01020 100%);
     box-shadow: 0 16px 46px rgba(0,0,0,.72), 0 0 46px rgba(255,34,51,.76);
   }
@@ -490,6 +499,110 @@
     opacity: .82;
     margin-block-start: 10px;
   }
+  .side-ticket-panel {
+    position: absolute;
+    right: 74px;
+    top: 50%;
+    width: min(420px, calc(100vw - 96px));
+    max-height: min(78vh, 720px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(10,10,14,.96);
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 22px 70px rgba(0,0,0,.74), 0 0 36px rgba(224,28,44,.35);
+    transform: translate(28px, -50%) scale(.94);
+    transform-origin: right center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .22s ease, transform .26s cubic-bezier(.2,.9,.25,1), visibility 0s linear .26s;
+  }
+  .side-ticket-widget.is-open .side-ticket-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(0, -50%) scale(1);
+    transition: opacity .22s ease, transform .26s cubic-bezier(.2,.9,.25,1), visibility 0s;
+  }
+  .side-ticket-panel__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .side-ticket-panel__eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 900;
+    color: rgba(255,255,255,.55);
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .side-ticket-panel__title {
+    margin-top: 3px;
+    font-family: var(--font-impact);
+    font-size: 28px;
+    line-height: .95;
+    color: #fff;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .side-ticket-panel__close {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .side-ticket-panel__widget {
+    min-height: 340px;
+    max-height: 48vh;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+  }
+  .side-ticket-panel__widget .external-widget-placeholder {
+    min-height: 340px;
+    border: 0;
+    border-radius: 10px;
+  }
+  .side-ticket-panel__widget iframe {
+    width: 100%;
+    height: 420px;
+    max-height: 48vh;
+    border: 0;
+    display: block;
+  }
+  .side-ticket-panel__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .side-ticket-support,
+  .side-ticket-open-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,255,255,.16);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .side-ticket-support { background: rgba(123,42,255,.45); }
+  .side-ticket-open-page { background: var(--red); }
 
   /* ─── TICKER ─────────────────────────────────────────── */
   .ticker-wrap {
@@ -1371,11 +1484,14 @@
     .exp-grid { grid-template-columns: 1fr; }
     .countdown { gap: 4px; }
     .cd-block { min-width: 72px; }
-    .side-ticket-banner {
+    .side-ticket-widget {
       top: auto;
       right: 50%;
       bottom: 14px;
       transform: translateX(50%);
+      align-items: flex-end;
+    }
+    .side-ticket-banner {
       writing-mode: horizontal-tb;
       width: min(92vw, 380px);
       min-height: 0;
@@ -1388,7 +1504,8 @@
       line-height: 1;
       box-shadow: 0 10px 30px rgba(0,0,0,.7), 0 0 32px rgba(224,28,44,.64);
     }
-    .side-ticket-banner:hover { transform: translateX(50%) translateY(-3px) scale(1.02); }
+    .side-ticket-banner:hover,
+    .side-ticket-widget.is-open .side-ticket-banner { transform: translateY(-3px) scale(1.02); }
     .side-ticket-banner::before,
     .side-ticket-banner::after {
       top: 50%;
@@ -1404,6 +1521,24 @@
       font-size: 10px;
       letter-spacing: .13em;
     }
+    .side-ticket-panel {
+      right: 50%;
+      top: auto;
+      bottom: 58px;
+      width: min(92vw, 380px);
+      max-height: 72vh;
+      padding: 12px;
+      transform: translate(50%, 16px) scale(.96);
+      transform-origin: center bottom;
+    }
+    .side-ticket-widget.is-open .side-ticket-panel {
+      transform: translate(50%, 0) scale(1);
+    }
+    .side-ticket-panel__title { font-size: 23px; }
+    .side-ticket-panel__widget { min-height: 300px; max-height: 42vh; }
+    .side-ticket-panel__widget .external-widget-placeholder { min-height: 300px; padding: 18px; }
+    .side-ticket-panel__widget iframe { height: 360px; max-height: 42vh; }
+    .side-ticket-panel__actions { grid-template-columns: 1fr; }
     .hero-img-wrap {
       width: 100vw;
       margin: 14px calc(50% - 50vw) 0;
@@ -1897,10 +2032,34 @@
 </head>
 <body>
 
-<a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="side-ticket-banner" aria-label="Купить билет на BIG RUSSIAN FEST" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">
-  <span>Купить билет</span>
-  <span class="side-ticket-banner__hint">12 июня</span>
-</a>
+<div class="side-ticket-widget" id="sideTicketWidget">
+  <button type="button" class="side-ticket-banner" id="sideTicketToggle" aria-label="Открыть покупку билета и поддержку" aria-expanded="false" aria-controls="sideTicketPanel">
+    <span>Купить билет</span>
+    <span class="side-ticket-banner__hint">12 июня</span>
+  </button>
+  <div class="side-ticket-panel" id="sideTicketPanel" aria-hidden="true">
+    <div class="side-ticket-panel__head">
+      <div>
+        <div class="side-ticket-panel__eyebrow">Билеты / поддержка</div>
+        <div class="side-ticket-panel__title">BIG RUSSIAN FEST</div>
+      </div>
+      <button type="button" class="side-ticket-panel__close" data-side-ticket-close aria-label="Закрыть">×</button>
+    </div>
+    <div class="side-ticket-panel__widget">
+      <div class="external-widget-placeholder" data-voroh-placeholder>
+        <div>
+          <h3>Покупка билетов</h3>
+          <p>Нажми, чтобы открыть виджет покупки.</p>
+          <button type="button" class="btn-main" data-load-voroh>Открыть покупку билета</button>
+        </div>
+      </div>
+    </div>
+    <div class="side-ticket-panel__actions">
+      <a href="https://t.me/custom843" target="_blank" rel="noopener" class="side-ticket-support" onclick="ym(109054298,'reachGoal','SUPPORT_CLICK')">Поддержка</a>
+      <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="side-ticket-open-page" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">Открыть Voroh</a>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ NAV ═══════════════════════════════════════════════════════ -->
 <nav>
@@ -2610,6 +2769,32 @@
     const btn=e.target.closest('[data-load-voroh]'); if(!btn) return;
     const container=btn.closest('[data-voroh-placeholder]'); loadVorohInto(container);
   });
+
+  function initSideTicketWidget(){
+    const widget = document.getElementById('sideTicketWidget');
+    const toggle = document.getElementById('sideTicketToggle');
+    const panel = document.getElementById('sideTicketPanel');
+    if(!widget || !toggle || !panel) return;
+    const setOpen = (open) => {
+      widget.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+      if(open) {
+        ym(109054298,'reachGoal','TICKET_CLICK');
+        const container = panel.querySelector('[data-voroh-placeholder]');
+        loadVorohInto(container);
+      }
+    };
+    toggle.addEventListener('click', () => setOpen(!widget.classList.contains('is-open')));
+    widget.querySelector('[data-side-ticket-close]')?.addEventListener('click', () => setOpen(false));
+    document.addEventListener('click', (e) => {
+      if(widget.classList.contains('is-open') && !widget.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') setOpen(false);
+    });
+  }
+  initSideTicketWidget();
 
   // ── Countdown ────────────────────────────────────────────────────
   function updateCountdown() {
