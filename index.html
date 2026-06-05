@@ -1072,6 +1072,45 @@
     border: 1px solid rgba(224,28,44,0.3);
   }
   .special-guest-card .artist-card-name { color: var(--red); }
+  .artist-card-ticket-note {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: 0.03em;
+    margin-top: 6px;
+  }
+  .artist-card-ticket-btn,
+  .prog-ticket-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 12px;
+    padding: 12px 22px;
+    background: linear-gradient(180deg, #22c55e 0%, #16a34a 55%, #0f7a35 100%);
+    color: #fff;
+    border: 1px solid rgba(134, 239, 172, 0.75);
+    border-radius: 999px;
+    box-shadow: 0 0 18px rgba(34, 197, 94, 0.35);
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .artist-card-ticket-btn:hover,
+  .prog-ticket-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+  .media-basket-poster {
+    grid-column: 1 / -1;
+    padding: 0;
+    background: #050505;
+    border-color: rgba(34, 197, 94, 0.45);
+  }
+  .media-basket-poster .artist-card-img { aspect-ratio: 16/20; object-fit: cover; object-position: center top; }
+  .media-basket-poster .artist-card-body { padding: 22px; }
+  .media-basket-poster .artist-card-name { color: #39ff7a; text-shadow: 0 0 14px rgba(57,255,122,.45); }
 
   /* ─── VENUE ──────────────────────────────────────────── */
   #venue {
@@ -2325,14 +2364,16 @@
     <!-- DAY 3 -->
     <div class="lineup-day" id="day3">
       <div class="artists-grid">
-        <div class="artist-card special-guest-card reveal" style="grid-column: 1 / -1; text-align: center; padding: 40px 32px;">
-          <div class="artist-num">14 ИЮНЯ /</div>
-          <div class="artist-card-name" style="font-size: 36px; color: var(--white);">MEDIA<br>BASKET</div>
-          <div class="artist-card-sub">Коллаборация BIG RUSSIAN FEST × Media Basket.</div>
+        <div class="artist-card artist-card-featured media-basket-poster reveal">
+          <img src="assets/media-basket-afterparty.jpg" alt="Media Basket Afterparty — AVIR, Stas Satori, Riri" class="artist-card-img" loading="lazy">
+          <div class="artist-card-body">
+            <div class="artist-num">14 ИЮНЯ / RAVEZ ONE / R1 CLUB</div>
+            <div class="artist-card-name" style="font-size: 36px;">X MEDIA<br>BASKET</div>
+            <div class="artist-card-sub">AVIR · STAS SATORI · RIRI</div>
+            <div class="artist-card-ticket-note">Билеты уже на сайте Voroh — переходи и забирай вход заранее.</div>
+            <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="artist-card-ticket-btn" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">Купить билет</a>
+          </div>
         </div>
-      </div>
-      <div style="margin-top: 24px;">
-        <span class="prog-collab-tag">MEDIA BASKET COLLAB</span>
       </div>
     </div>
   </div>
@@ -2370,7 +2411,7 @@
           </div>
           <div class="venue-detail-row">
             <span class="vd-key">14 Июня</span>
-            <span class="vd-val">Коллаборация с Media Basket</span>
+            <span class="vd-val">X Media Basket — R1 Club</span>
           </div>
           <div class="venue-detail-row">
             <span class="vd-key">Формат</span>
@@ -2452,20 +2493,25 @@
       <div class="program-day-block reveal reveal-delay-3">
         <div class="prog-day-header">
           <div class="prog-date-badge">14 ИЮНЯ</div>
-          <div class="prog-day-title">Media Basket</div>
+          <div class="prog-day-title">X Media Basket</div>
         </div>
         <div class="prog-timeline">
           <div class="prog-item headliner-item">
-            <div class="prog-name">MEDIA BASKET COLLAB</div>
-            <div class="prog-sub">Коллаборация с Media Basket</div>
+            <div class="prog-name">X MEDIA BASKET</div>
+            <div class="prog-sub">Afterparty: Riri / Stas Satori / AVIR</div>
           </div>
           <div class="prog-item">
-            <div class="prog-name">BIG RUSSIAN FEST × MEDIA BASKET</div>
-            <div class="prog-sub">Формат и подробности — в отдельном анонсе</div>
+            <div class="prog-name">R1 CLUB</div>
+            <div class="prog-sub">14 июня · RAVEZ ONE · старт в 23:00</div>
+          </div>
+          <div class="prog-item">
+            <div class="prog-name">Билеты уже на Voroh</div>
+            <div class="prog-sub">Переходи на сайт Voroh и покупай билет заранее</div>
+            <a href="https://voroh.ru/event/1022485/" target="_blank" rel="noopener" class="prog-ticket-btn" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">Купить билет</a>
           </div>
         </div>
         <div style="margin-top: 20px;">
-          <span class="prog-collab-tag">MEDIA BASKET COLLAB</span>
+          <span class="prog-collab-tag">X MEDIA BASKET</span>
         </div>
       </div>
     </div>
@@ -2561,7 +2607,7 @@
         <div class="faq-a">
           <p><strong>12 июня</strong> — старт в 21:00 на Профсоюзной 3, сразу после городского салюта. Заканчиваем в 05:00. Рекомендуем приходить заранее, чтобы не пропустить ни одного артиста.</p>
           <p><strong>13 июня</strong> — Афтерпати Фест: вход бесплатный, браслеты BIG RUSSIAN FEST сохраняй с собой.</p>
-          <p><strong>14 июня</strong> — коллаборация с Media Basket. Подробности по формату и месту — в отдельном анонсе.</p>
+          <p><strong>14 июня</strong> — X Media Basket: Riri, Stas Satori, AVIR, R1 Club. Билеты уже на сайте Voroh — переходи и покупай заранее.</p>
         </div>
       </div>
 
