@@ -1113,7 +1113,19 @@
   }
   .media-basket-poster .artist-card-img { aspect-ratio: 16/20; object-fit: cover; object-position: center top; }
   .media-basket-poster .artist-card-body { padding: 22px; }
-  .media-basket-poster .artist-card-name { color: #39ff7a; text-shadow: 0 0 14px rgba(57,255,122,.45); }
+  .media-basket-poster .artist-card-name,
+  .media-basket-artist-card .artist-card-name { color: #39ff7a; text-shadow: 0 0 14px rgba(57,255,122,.45); }
+  .media-basket-artist-card {
+    padding: 0;
+    background: #050505;
+    border-color: rgba(34, 197, 94, 0.35);
+  }
+  .media-basket-artist-card .artist-card-img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .media-basket-artist-card .artist-card-body { padding: 18px 18px 20px; }
 
   /* ─── VENUE ──────────────────────────────────────────── */
   #venue {
@@ -2369,13 +2381,37 @@
     <div class="lineup-day" id="day3">
       <div class="artists-grid">
         <div class="artist-card artist-card-featured media-basket-poster reveal">
-          <img src="assets/media-basket-afterparty.jpg?v=20260605214846" alt="Media Basket Afterparty — AVIR, Stas Satori, Riri" class="artist-card-img" loading="lazy">
+          <img src="assets/media-basket-afterparty.jpg?v=20260606222803" alt="Media Basket Afterparty — AVIR, Stas Satori, Riri" class="artist-card-img" loading="lazy">
           <div class="artist-card-body">
             <div class="artist-num">14 ИЮНЯ / RAVEZ ONE</div>
             <div class="artist-card-name" style="font-size: 36px;">X MEDIA<br>BASKET</div>
             <div class="artist-card-sub">AVIR · STAS SATORI · RIRI</div>
             <div class="artist-card-ticket-note">Билеты уже на сайте Voroh — переходи и забирай вход заранее.</div>
             <a href="https://voroh.ru/event/1035914/" target="_blank" rel="noopener" class="artist-card-ticket-btn" onclick="ym(109054298,'reachGoal','TICKET_CLICK')">Купить билет</a>
+          </div>
+        </div>
+        <div class="artist-card artist-card-featured media-basket-artist-card reveal reveal-delay-1">
+          <img src="assets/media-basket-stas-satori.jpg?v=20260606222803" alt="STAS SATORI — Media Basket x Kazan Afterparty" class="artist-card-img" loading="lazy">
+          <div class="artist-card-body">
+            <div class="artist-num">14 ИЮНЯ /</div>
+            <div class="artist-card-name">STAS SATORI</div>
+            <div class="artist-card-sub">MEDIA BASKET x KAZAN AFTERPARTY</div>
+          </div>
+        </div>
+        <div class="artist-card artist-card-featured media-basket-artist-card reveal reveal-delay-2">
+          <img src="assets/media-basket-riri.jpg?v=20260606222803" alt="RIRI — Media Basket x Kazan Afterparty" class="artist-card-img" loading="lazy">
+          <div class="artist-card-body">
+            <div class="artist-num">14 ИЮНЯ /</div>
+            <div class="artist-card-name">RIRI</div>
+            <div class="artist-card-sub">MEDIA BASKET x KAZAN AFTERPARTY</div>
+          </div>
+        </div>
+        <div class="artist-card artist-card-featured media-basket-artist-card reveal reveal-delay-3">
+          <img src="assets/media-basket-avir.jpg?v=20260606222803" alt="AVIR — Media Basket x Kazan Afterparty" class="artist-card-img" loading="lazy">
+          <div class="artist-card-body">
+            <div class="artist-num">14 ИЮНЯ /</div>
+            <div class="artist-card-name">AVIR</div>
+            <div class="artist-card-sub">MEDIA BASKET x KAZAN AFTERPARTY</div>
           </div>
         </div>
       </div>
